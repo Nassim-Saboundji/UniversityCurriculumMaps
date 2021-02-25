@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import os
 import time
+import json
+import re
 
 class Curriculum:
 
@@ -46,7 +48,7 @@ def dl_course_pages_UdeM(soup_object, directory_name):
             course_name = link.split('/')[3]
             course_info_link = 'https://admission.umontreal.ca' + link
             
-            # shell commande that will download the pages locally
+            # shell command that will download the pages locally
             # in the folder we want.
             os.system(
             'cd ' + directory_name 
@@ -57,15 +59,30 @@ def dl_course_pages_UdeM(soup_object, directory_name):
             time.sleep(3)
     
 
-dl_course_pages_UdeM(soup, 'test')
+#dl_course_pages_UdeM(soup, 'test')
 
 # will return an array of prequisites for a given course
-def parse_prerequisites_UdeM(course_page):
-    pass
+# if there is no prerequisites it will return 0
+# certain rules must be applied later on to filter obsolete courses
+# from the prerequisites.
+def parse_prerequisites_UdeM(course_page_name):
+    course_page = open(course_page_name)
+    soup = BeautifulSoup(course_page, 'html.parser')
+    raw_prereqs = soup.find_all('p', class_='specDefinition')
+    #print(raw_prereqs)
+    prereqs_txt = raw_prereqs[len(raw_prereqs) - 1].string
+    if prereqs_txt != None:
+        # regular expression that checks for a substring
+        # which start with three capital letters and continues with
+        # 4 numbers. This is to find all prerequisites course codes
+        # ex: IFT2015 
+        result = re.findall("[A-Z]{3}[0-9]{4}", prereqs_txt)
+        if result != None:
+            return result
+    
+    # no prerequisites were found
+    return 0            
 
-
-
-
-
-
+pre_reqs = parse_prerequisites_UdeM('test/ift-3395.html')
+print(pre_reqs)
     
