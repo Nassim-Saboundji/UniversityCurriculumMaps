@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import os
-
+import time
 
 class Curriculum:
 
@@ -29,28 +29,40 @@ test = Curriculum('informatique','https://admission.umontreal.ca/programmes/bacc
 test.download_html()
 soup = test.soupify()
 
-# function that will extract all course information from
-# University of Montreal (UdeM).
-# returns a json object with relevant informations for each courses.
-# extraction is different for different universities
-def get_courses_UdeM(soup_object):
+# will download the course pages for every course in a curriculum
+# at UdeM. Specify a directory name in which the function will put the
+# files in. If it does not exist it will create it.
+# functions having the UdeM are specific to university of montreal
+# later on it could be possible to extend the extractor for other universities
+def dl_course_pages_UdeM(soup_object, directory_name):
     courses = soup.find_all('tbody', class_="programmeCourse fold")
-    print(courses[0].find_all('a', class_='btn')[0]['href'])
-    courses_json = {}
+    os.system('mkdir ' + directory_name)
+    
+    for i in range(len(courses)):
+        a_tags_with_links = courses[i].find_all('a', class_='btn')
 
-get_courses_UdeM(soup)
+        if (len(a_tags_with_links) != 0):
+            link = a_tags_with_links[0]['href']
+            course_name = link.split('/')[3]
+            course_info_link = 'https://admission.umontreal.ca' + link
+            
+            # shell commande that will download the pages locally
+            # in the folder we want.
+            os.system(
+            'cd ' + directory_name 
+            + '&& curl ' + course_info_link + '> ' + course_name + '.html'
+            )
 
+            # we don't want to tank the servers of the university
+            time.sleep(3)
+    
 
+dl_course_pages_UdeM(soup, 'test')
 
-
-def get_courses_McGill(soup_object):
+# will return an array of prequisites for a given course
+def parse_prerequisites_UdeM(course_page):
     pass
 
-def get_courses_Concordia(soup_object):
-    pass
-
-def get_courses_USherbrooke(soup_object):
-    pass
 
 
 
