@@ -9,10 +9,9 @@ fetch("./informatique.json") // only change this to generate a new map for anoth
 
     let dataSet = [];
     for(let i = 0; i < keys.length; i++){
-        let extraInfo = data[keys[i]]["name"]; //+ "\n" + data[keys[i]]["description"]
         //set the id inside the data object so we can trace the edges between courses
         data[keys[i]]["id"] = i;
-        dataSet.push({id: data[keys[i]]["id"], label: keys[i], title: extraInfo})
+        dataSet.push({id: data[keys[i]]["id"], label: keys[i], title: extraInfo(keys[i], data)})
     }
 
 
@@ -50,4 +49,24 @@ function findEdges(keys, data){
 
     console.log(edges);
     return edges;
+}
+
+
+function extraInfo(key, data){
+    let description = data[key]["description"];
+    descriptionAsArray = description.split(".");
+    let finalInfo = "";
+    for(let i = 0; i < descriptionAsArray.length; i++){
+        if (i != descriptionAsArray.length - 1){
+            finalInfo += descriptionAsArray[i] + ".\n"; 
+        }else{
+            finalInfo += descriptionAsArray[i] + "\n";
+        }
+    }
+    if (data[key]["prereqs"] != 0){
+        let stringPreReqs = data[key]["prereqs"].join(" ");
+        return data[key]["name"] + "\n" + finalInfo + "Préalables ou Concomitants : \n" + stringPreReqs + "\n";
+    }
+
+    return data[key]["name"] + "\n" + finalInfo;
 }
