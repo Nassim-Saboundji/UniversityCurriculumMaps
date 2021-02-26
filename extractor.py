@@ -30,11 +30,13 @@ class Curriculum:
 
     def get_course_list(self):
         return self.course_list_data
-        
 
-test = Curriculum('informatique','https://admission.umontreal.ca/programmes/baccalaureat-en-informatique/structure-du-programme/')
-test.download_html()
-soup = test.soupify()
+    def write_to_JSON(self, name : str):    
+        file = open(name + ".json",'w')
+        json.dump(self.course_list_data, file)
+    
+        
+        
 
 # will download the course pages for every course in a curriculum
 # at UdeM. Specify a directory name in which the function will put the
@@ -42,7 +44,7 @@ soup = test.soupify()
 # functions having the UdeM are specific to university of montreal
 # later on it could be possible to extend the extractor for other universities
 def dl_course_pages_UdeM(soup_object, directory_name : str):
-    courses = soup.find_all('tbody', class_="programmeCourse fold")
+    courses = soup_object.find_all('tbody', class_="programmeCourse fold")
     os.system('mkdir ' + directory_name)
     
     for i in range(len(courses)):
@@ -61,7 +63,7 @@ def dl_course_pages_UdeM(soup_object, directory_name : str):
             )
 
             # we don't want to tank the servers of the university
-            time.sleep(3)
+            time.sleep(1)
     
 
 #dl_course_pages_UdeM(soup, 'test')
@@ -89,6 +91,11 @@ def parse_prerequisites_UdeM(file_path):
     return 0            
 
 
+def course_id_only(course_name : str):
+    course_letters = re.findall('[A-Z]{3}', course_name)
+    course_number = re.findall('[0-9]{4}',course_name)
+    return course_letters[0] + course_number[0]
+
 # Makes a course schema array that will contain the key of the course
 # as the first element and a json object containing relevant info
 # as the second element. This will make it easy to add key pair values in
@@ -98,7 +105,8 @@ def course_schema_array(file_path):
     schema = course_page.find('script', attrs={'type' :'application/ld+json'}).string
     #we now have access to the json schema that was provided in the course
     #webpage so we can use that to transfer some info over to our course schema
-    schema_json = json.loads(schema)
+    print(schema)
+    schema_json = json.loads(schema, strict=False)
     
     useful_schema = {}
     useful_schema["name"] = schema_json["name"]
@@ -110,9 +118,4 @@ def course_schema_array(file_path):
     schema_array.append(course_id) 
     schema_array.append(useful_schema)
     return schema_array
-
-def course_id_only(course_name : str):
-    course_letters = re.findall('[A-Z]{3}', course_name)
-    course_number = re.findall('[0-9]{4}',course_name)
-    return course_letters[0] + course_number[0]
 
