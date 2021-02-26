@@ -5,7 +5,7 @@ fetch("./informatique.json") // only change this to generate a new map for anoth
 })
 .then(data => {
     keys = Object.keys(data);
-    console.log(keys);
+    //console.log(keys);
 
     let dataSet = [];
     for(let i = 0; i < keys.length; i++){
@@ -47,7 +47,7 @@ function findEdges(keys, data){
         }
     }
 
-    console.log(edges);
+    //console.log(edges);
     return edges;
 }
 
