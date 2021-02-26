@@ -20,5 +20,6 @@ def main():
    
    informatique.write_to_JSON('informatique')
 
+
 if __name__ == '__main__':
     main()   
