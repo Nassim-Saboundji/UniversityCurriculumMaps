@@ -42,7 +42,7 @@ function findEdges(keys, data){
             continue
         } 
         for(let j = 0; j < prereqsArray.length; j++){
-            if(data[prereqsArray[j]]){ // if the course exists and is not obsolete
+            if(data[prereqsArray[j]] && data[prereqsArray[j]]["id"] != data[keys[i]]["id"]){ // if the course exists and is not obsolete
                 edges.push({from: data[prereqsArray[j]]["id"], to: data[keys[i]]["id"]})
             }
         }
