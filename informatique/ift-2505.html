@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2019 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+<base href="https://admission.umontreal.ca/">
+
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="author" content="Université de Montréal">
+
+
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/merged-d791087a66aeceefa6589192b6efa19d-31c2ff502c9461a45ef8fa2c274c60b6.css" media="all">
+
+
+
+
+<script src="/typo3temp/assets/compressed/merged-21e4189bd780f750df69932552464668-f2ece6cec15dc326795e66fdc4e0cb17.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+/*TYPO3RsaEncryptionPublicKeyUrl*/
+var TYPO3RsaEncryptionPublicKeyUrl = '\/index.php?eID=RsaPublicKeyGenerationController';
+
+/*]]>*/
+</script>
+
+
+<title>Optimisation linéaire - Université de Montréal</title><meta property="og:title" content="Optimisation linéaire - Université de Montréal"/><meta name="keywords" content="" /><meta name="dcterms.creator" content="Université de Montréal" /><meta name="dcterms.description" content="" /><script type="text/javascript">var pidComparerProgramme = 54;</script><meta name="viewport" content="width=device-width"><link rel="apple-touch-icon" href="/fileadmin/templates/img/apple-touch-icon.png" /><link rel="shortcut icon" href="https://admission.umontreal.ca/favicon.ico" /><link rel="icon" href="https://admission.umontreal.ca/favicon.ico" />        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" /><meta property="fb:app_id" content="1486787494884839" /><script>var JourClavardage = "Lu,Ma,Me,Je";var JourFeries = "2020-04-10,2020-04-13,2020-05-18,2020-06-24,2020-07-01,2020-09-07,2020-10-12";var HoraireClavardageDebut = "9:30";var HoraireClavardageFin = "16:30";var SignatureHelpscout = "SBgWhm2OXjLvuFbhLxj3WqCG90eD0gN6iOhmnl2SKA8=";</script>
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Course",
+        "name": "IFT 2505 - Optimisation linéaire",
+        "description": "Modèles linéaires. Méthode du simplexe. Dualité. Postoptimisation. Analyse de sensibilité. Problèmes à structures particulières. Modèles en nombres entiers. Méthodes de coupes. Séparation et évaluation progressive.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Université de Montréal",
+            "alternateName": "UdeM",
+            "logo": "https://admission.umontreal.ca/fileadmin/templates/img/logo-udemBlue.png",
+            "url": "https://admission.umontreal.ca",
+            "description": "Service de l’admission et du recrutement de l'Université de Montréal"
+        }
+    }
+    </script>
+
+</head>
+<body class="l-section">
+
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KTJD95"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KTJD95');</script>
+        <!-- End Google Tag Manager -->    <!-- Help Scout Beacon 2 -->
+    <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
+    <!--<script>window.Beacon('reset');window.Beacon('init', 'eaf1e2ef-7422-40a6-bd91-832366e9c4a8')</script>-->
+    <!-- End Help Scout Beacon 2 --><div class="l-a11y"><div class="l-wrap"><a href="/cours-et-horaires/#main">Passer au contenu</a><h1>Université de Montréal - Guide d'admission</h1></div></div><div class="l-header"><header role="banner"><div class="l-nav"><nav role="navigation" class="navigation-main bar"><h2>Navigation principale</h2><ul><li class="isHome"><a href="/">Page d'accueil</a></li><li><a href="/etudes-au-1er-cycle/">Études au<br> 1<sup>er</sup> cycle</a><ul class="etudesMenu"><li><ul><li><span>Programmes d'études</span><ul><li><a href="/etudes-au-1er-cycle/programmes-detudes/choisir-le-bon-type-de-programme-detudes/">Choisir le bon type de programme</a></li><li><a href="/comparer-les-programmes/">Comparer les programmes</a></li><li><a href="http://admission.umontreal.ca/programmes-de-1er-cycle/">De A à Z</a></li><li><a href="/programmes-de-1er-cycle-ouverts/">Ouverts au prochain trimestre</a></li><li><a href="/programmes-de-1er-cycle-a-laval/">Offerts au campus de Laval</a></li><li><a href="/etudes-au-1er-cycle/programmes-detudes/passerelles-dec-bac/">Passerelles DEC - BAC</a></li></ul></li><li><span>Cours et horaires</span><ul><li><a href="/cours-de-1er-cycle/">Tous les cours au 1<sup>er</sup> cycle</a></li><li><a href="/cours-de-1er-cycle-offerts-aux-etudiants-libres/">Offerts aux étudiants libres</a></li></ul></li></ul><ul><li><span>Explorer les programmes par domaine d’études</span><ul><li><a href="/programmes-de-1er-cycle/amenagement/">Aménagement</a></li><li><a href="/programmes-de-1er-cycle/arts-et-musique/">Arts et musique</a></li><li><a href="/programmes-de-1er-cycle/communication/">Communication</a></li><li><a href="/programmes-de-1er-cycle/droit/">Droit</a></li><li><a href="/programmes-de-1er-cycle/economie-et-politique/">Économie et politique</a></li><li><a href="/programmes-de-1er-cycle/enseignement-et-education/">Enseignement et sciences de l'éducation</a></li><li><a href="/programmes-de-1er-cycle/environnement-et-developpement-durable/">Environnement et développement durable</a></li><li><a href="/programmes-de-1er-cycle/lettres-et-langues/">Lettres et langues</a></li><li><a href="/programmes-de-preparation-aux-etudes-universitaires/">Préparation aux études universitaires</a></li><li><a href="/programmes-de-1er-cycle-individualises/">Programmes individualisés</a></li></ul><ul><li><a href="/programmes-de-1er-cycle/sciences-de-ladministration-et-gestion/">Sciences de l’administration et gestion</a></li><li><a href="/programmes-de-1er-cycle/sciences-de-la-sante/">Sciences de la santé</a></li><li><a href="/programmes-de-1er-cycle/sciences-de-la-vie/">Sciences de la vie</a></li><li><a href="/programmes-de-1er-cycle/sciences-humaines/">Sciences humaines</a></li><li><a href="/programmes-de-1er-cycle/sciences-pures-et-sciences-appliquees/">Sciences pures et sciences appliquées</a></li><li><a href="/programmes-de-1er-cycle/sciences-sociales/">Sciences sociales</a></li><li><a href="/programmes-de-1er-cycle/sciences-sociales-intervention/">Sciences sociales : intervention</a></li><li><a href="/programmes-de-1er-cycle/technologie-de-linformation-et-des-communications/">Technologies de l’information et des communications</a></li><li><a href="/programmes-de-1er-cycle/theologie-et-sciences-des-religions/">Théologie et sciences des religions</a></li></ul></li></ul></li></ul></li><li><a href="/etudes-aux-cycles-superieurs/">Études aux<br> cycles supérieurs</a><ul class="etudesMenu"><li><ul><li><span>Passez aux cycles supérieurs</span><ul><li><a href="/etudes-aux-cycles-superieurs/passez-aux-cycles-superieurs/choisir-le-bon-type-de-programme/">Choisir le bon type de programme</a></li><li><a href="/etudes-aux-cycles-superieurs/passez-aux-cycles-superieurs/etudier-aux-cycles-superieurs/">Étudier aux cycles supérieurs à l'UdeM</a></li><li><a href="/etudes-aux-cycles-superieurs/passez-aux-cycles-superieurs/faire-de-la-recherche-a-ludem/">Faire de la recherche à l'UdeM</a></li></ul></li><li><span>Programmes d'études</span><ul><li><a href="http://admission.umontreal.ca/programmes-de-cycles-superieurs/">De A à Z</a></li><li><a href="/programmes-de-cycles-superieurs-ouverts/">Ouverts au prochain trimestre</a></li></ul></li><li><span>Cours et horaires</span><ul><li><a href="/cours-aux-cycles-superieurs/">Tous les cours aux cycles supérieurs</a></li><li><a href="/cours-de-cycles-superieurs-offerts-aux-etudiants-libres/">Offerts aux étudiants libres</a></li></ul></li></ul><ul><li><span>Explorer les programmes par domaine d’études</span><ul><li><a href="/programmes-de-cycles-superieurs/amenagement/">Aménagement</a></li><li><a href="/programmes-de-cycles-superieurs/arts-et-musique/">Arts et musique</a></li><li><a href="/programmes-de-cycles-superieurs/communication/">Communication</a></li><li><a href="/programmes-de-cycles-superieurs/droit/">Droit</a></li><li><a href="/programmes-de-cycles-superieurs/economie-et-politique/">Économie et politique</a></li><li><a href="/programmes-de-cycles-superieurs/enseignement-et-education/">Enseignement et sciences de l'éducation</a></li><li><a href="/programmes-de-cycles-superieurs/environnement-et-developpement-durable/">Environnement et développement durable</a></li><li><a href="/programmes-de-cycles-superieurs/lettres-et-langues/">Lettres et langues</a></li><li><a href="http://admission.umontreal.ca/programmes-de-cycles-superieurs-individualises/">Programmes individualisés</a></li></ul><ul><li><a href="/programmes-de-cycles-superieurs/sciences-de-ladministration-et-gestion/">Sciences de l'administration et gestion</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-de-la-sante/">Sciences de la santé</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-de-la-vie/">Sciences de la vie</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-humaines/">Sciences humaines</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-pures-et-sciences-appliquees/">Sciences pures et sciences appliquées</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-sociales/">Sciences sociales</a></li><li><a href="/programmes-de-cycles-superieurs/sciences-sociales-intervention/">Sciences sociales : intervention</a></li><li><a href="/programmes-de-cycles-superieurs/technologie-de-linformation-et-des-communications/">Technologies de l'information et des communications</a></li><li><a href="/programmes-de-cycles-superieurs/theologie-et-sciences-des-religions/">Théologie et sciences des religions</a></li></ul></li></ul></li></ul></li><li><a href="/admission/">Admission</a><ul class="admissionMenu"><li><ul><li><span>Préparation de la demande</span><ul><li class="admissionButton"><a href="/admission/preparation-de-la-demande/faire-les-bons-choix-de-programmes/">Faire les bons choix de programmes</a></li><li><a href="/admission/preparation-de-la-demande/verifier-les-conditions-dadmissibilite/">Vérifier les conditions d'admissibilité</a></li><li><a href="/admission/preparation-de-la-demande/respecter-les-dates-limites-de-depot/">Respecter les dates limites de dépôt</a></li><li><a href="/admission/preparation-de-la-demande/comprendre-levaluation-des-dossiers/">Comprendre l'évaluation des dossiers</a></li><li><a href="/admission/preparation-de-la-demande/prevoir-les-entrevues-et-les-tests/">Prévoir les entrevues et les tests</a></li><li><a href="/admission/preparation-de-la-demande/se-faire-reconnaitre-des-acquis-experientiels/">Se faire reconnaître des acquis expérientiels</a></li></ul></li></ul></li><li><ul><li><span>Dépôt de la demande</span><ul><li class="admissionButton"><a href="/admission/depot-de-la-demande/demande-dadmission/">Demande d'admission</a></li><li><a href="/admission/depot-de-la-demande/poursuivre-une-demande-inachevee/">Poursuivre une demande inachevée</a></li><li><a href="/admission/depot-de-la-demande/changer-de-programme-detudes/">Changer de programme d'études</a></li><li><a href="/admission/depot-de-la-demande/poursuivre-un-baccalaureat-par-cumul/">Poursuivre un baccalauréat par cumul</a></li><li><a href="/admission/depot-de-la-demande/payer-les-frais-dadmission/">Payer les frais d'admission</a></li><li><a href="/admission/depot-de-la-demande/faire-parvenir-les-documents/">Faire parvenir les documents</a></li></ul></li></ul></li><li><ul><li><span>Après la demande</span><ul><li class="admissionButton"><a href="/admission/apres-la-demande/suivre-votre-dossier/">Suivre votre dossier</a></li><li><a href="/admission/apres-la-demande/modifier-une-demande-dadmission/">Modifier une demande d'admission</a></li><li><a href="/admission/apres-la-demande/recevoir-une-reponse/">Recevoir une réponse</a></li><li><a href="/admission/apres-la-demande/demander-une-revision-du-dossier/">Demander une révision du dossier</a></li><li><a href="/admission/apres-la-demande/choix-subsequent/">Faire un choix subséquent</a></li><li><a href="/admission/apres-la-demande/etre-admis-les-prochaines-etapes/">Être admis : les prochaines étapes</a></li><li><a href="/admission/apres-la-demande/ajustement-des-conditions-dadmission/ajustement-des-exigences-linguistiques-a-ladmission/">Ajustement des conditions d'admission</a></li></ul></li></ul></ul></li><li><a href="/info-conseils/">Info-conseils</a><ul class="infoMenu"><li><ul><li><a href="/objectif-udem/" class="blogButton">Blogue Objectif UdeM</a></li></ul><ul><li><span>Choisir l'UdeM</span><ul><li><a href="/info-conseils/choisir-ludem/pourquoi-ludem/?no_cache=1">Pourquoi l'UdeM?</a></li><li><a href="/info-conseils/choisir-ludem/milieu-de-vie/">Milieu de vie</a></li><li><a href="/info-conseils/choisir-ludem/services-aux-etudiants/">Services aux étudiants</a></li><li><a href="/info-conseils/choisir-ludem/le-sport-a-ludem/">Le sport à l'UdeM</a></li></ul></li></ul></li><li><ul><li><span>Outils et astuces</span><ul><li><a href="/info-conseils/outils-et-astuces/apercu-des-outils/">Aperçu des outils</a></li><li><a href="https://admission.umontreal.ca/affiniti/fr/">Affiniti</a></li><li><a href="/brochures-electroniques/">Brochure pour futurs étudiants</a></li><li><a href="http://registraire.umontreal.ca/droits-de-scolarite/calculateur-des-frais-de-scolarite/">Calculateur des coûts</a></li><li><a href="/comparer-les-programmes/">Comparateur de programmes</a></li><li><a href="/info-conseils/outils-et-astuces/des-ambassadeurs-qui-font-la-difference/">Des ambassadeurs qui font la différence</a></li><li><a href="/info-conseils/outils-et-astuces/foire-aux-questions/">Foire aux questions</a></li><li><a href="/info-conseils/outils-et-astuces/financer-ses-etudes/">Financer ses études</a></li></ul><ul><li><a href="/info-conseils/outils-et-astuces/glossaire/">Glossaire</a></li><li><a href="/info-conseils/outils-et-astuces/guide-dadmission/">Guide d'admission</a></li><li><a href="/info-conseils/outils-et-astuces/parcours/">Parcours : 4 étapes pour entrer à l'UdeM</a></li><li><a href="/admission/planificateur/">Planificateur – Année préparatoire</a></li><li><a href="/info-conseils/outils-et-astuces/publications/">Publications</a></li><li><a href="/info-conseils/outils-et-astuces/prevoir-son-budget/">Prévoir son budget</a></li><li><a href="/info-conseils/outils-et-astuces/trouver-son-directeur-de-recherche/">Trouver son directeur de recherche</a></li><li><a href="/info-conseils/outils-et-astuces/cursus/">Test Cursus: trouver sa voie</a></li></ul></li></ul></li></ul></li><li><a href="/evenements/">Événements</a><ul class="sectionMenu"><li><ul><li><span>Sur le Web</span><ul><li><a href="/les-portes-ouvertes-se-transforment/">Les Rendez-vous des futurs étudiants</a></li><li><a href="http://admission.umontreal.ca/evenements/sur-le-web/seances-d-information-en-ligne/">Séances d'information</a></li><li><a href="/des-questions-pour-les-ambassadeurs/">Des questions pour les ambassadeurs?</a></li></ul></li></ul></li><li><ul><li><span>Sur le campus</span><ul><li><a href="/universite-de-montreal/visite-virtuelle/">Visite virtuelle des pavillons</a></li></ul></li></ul></li><li><ul><li><span>En rediffusion</span><ul><li><a href="/videos-sur-demande/programmes-de-1er-cycle/">Programmes de 1er cycle</a></li><li><a href="/videos-sur-demande/programmes-de-cycles-superieurs/">Programmes de cycles supérieurs</a></li><li><a href="/videos-sur-demande/admission-et-services-aux-etudiants/">Admission et services aux étudiants</a></li><li><a href="/videos-sur-demande/ressources-pour-etudiants-internationaux/">Ressources pour étudiants internationaux</a></li></ul></li></ul></li></ul></li><li class="isLast"><a href="/vous-etes/">Vous êtes...</a><ul class="subMenu"><li><a href="/vous-etes/futurs-etudiants/"><span>Futurs étudiants</span></a><ul class="level3"><li><a href="/vous-etes/futurs-etudiants/formes-au-quebec/"><span>Formés au Québec</span></a></li><li><a href="/vous-etes/futurs-etudiants/formes-au-canada-hors-quebec/"><span>Formés au Canada (hors Québec)</span></a></li><li><a href="/vous-etes/futurs-etudiants/internationaux-et-residents-permanents/"><span>Internationaux et résidents permanents</span></a></li><li><a href="/vous-etes/futurs-etudiants/autochtones/"><span>Autochtones</span></a></li><li><a href="/vous-etes/futurs-etudiants/etudiants-libres/"><span>Étudiants libres</span></a></li></ul></li><li><a href="/vous-etes/etudiants-admis/"><span>Étudiants admis</span></a></li><li><a href="/vous-etes/parents/"><span>Parents</span></a></li><li><a href="/vous-etes/conseillers/"><span>Conseillers</span></a></li></ul></li></ul></nav></div><div class="l-nav-mobile"><nav class="js-folder-unique navigation-mobile bar"><div class="fold menu-fold"><h2 class="foldButton js-foldButton menu-button">Menu</h2><div class="foldContent js-foldContent"><ul class="navigation-main mobile"><li><a href="/etudes-au-1er-cycle/">Études au 1<sup>er</sup> cycle</a></li><li><a href="/etudes-aux-cycles-superieurs/">Études aux cycles supérieurs</a></li><li><a href="/admission/">Admission</a></li><li><a href="/info-conseils/">Info-conseils</a></li><li><a href="/evenements/">Événements</a></li><li><a href="/vous-etes/">Vous êtes...</a></li><li><a href="/nous-joindre/">Nous joindre</a></li><li><a href="/objectif-udem/">Blogue Objectif UdeM</a></li></ul><ul class="navigation-traduction mobile"><li><a href="/en/" lang="en">English</a></li><li><a href="/brasil/" lang="pt">Português</a></li></ul></div></div><div class="fold pref-fold"><span class="foldButton js-foldButton pref-button">Mon compte</span><div class="foldContent js-foldContent"><ul class="navigation-connexion mobile"><li><a href="/connexion/">Connexion</a></li><li><a href="/creer-un-compte/">Créer un compte</a></li><li><a href="/pourquoi-se-creer-un-compte/">Mon Guide</a></li></ul></div></div><div class="link settings-link link-customization-settings"><span class="settings-button">Mes réglages</span></div><div class="fold fav-fold"><span class="foldButton js-foldButton fav-button">Signets UdeM</span><div class="foldContent js-foldContent"><a href="http://www.umontreal.ca">www.umontreal.ca</a><ul class="navigation-udem mobile"><li><a href="https://www.umontreal.ca/#udemwww-search-personne">Répertoire</a></li><li><a href="http://www.umontreal.ca/repertoires/facultes.html">Facultés</a></li><li><a href="http://http://www.bib.umontreal.ca/">Bibliothèques</a></li><li><a href="http://www.umontreal.ca/plancampus/index.html">Plan campus</a></li><li><a href="/navigations/navigation-udem/mon-udem/mon-centre-etudiant/">Mon UdeM</a></li></ul></div></div><div class="fold search-fold"><span class="foldButton js-foldButton search-button">Recherche</span><div class="foldContent js-foldContent">
+<div class="tx_solr container">
+	<div class="row">
+		<div class="col-md-12">
+			
+	
+
+	<div class="tx-solr-search-form">
+		<form method="get" id="tx-solr-search-form-pi-results" action="/cours-et-horaires/" data-suggest="/?type=7384&amp;id=163&amp;filters=%7B%22type%22%3A%22type%3Apages%22%7D" data-suggest-header="Top Results" accept-charset="utf-8">
+			<div class="input-group">
+				<label class="filtersLabel" for="filtersSearch">
+					Rechercher dans les résultats
+				</label>
+				<input class="filtersSearch" id="filtersSearch" name="q" value="" placeholder="Mot clé" type="search">
+				<span class="icn-search"></span>
+			</div>
+		</form>
+	</div>
+
+
+
+		</div>
+	</div>
+</div></div></div></nav></div><div class="l-logo"><div class="logo"><a href="http://www.umontreal.ca" class="logoUdem"><img src="/fileadmin/templates/img/logo-udemBlue.png" alt="Université de Montréal"></a><span class="logoBorder"></span><a href="/" class="siteTitle">Guide d'<span>admission</span><br>et des <span>programmes d'études</span></a></div></div><div class="l-udem"><nav class="navigation-udem bar" role="navigation"><h2>Liens externes</h2><ul><li><a href="http://www.umontreal.ca/#udemwww-search-personne">Répertoire</a></li><li><a href="http://www.umontreal.ca/repertoires/facultes.html">Facultés</a></li><li><a href="http://www.bib.umontreal.ca/">Bibliothèques</a></li><li><a href="http://www.umontreal.ca/plancampus/index.html">Plan campus</a></li><li class="udemsub"><button class="udemsubButton">Mon UdeM<span> Cliquez pour afficher le sous-menu</span></button><ul><li><a href="http://www.centreetudiant.umontreal.ca/">Mon Centre étudiant</a></li><li><a href="http://studium.umontreal.ca/">StudiUM</a></li><li><a href="http://outlook.umontreal.ca/exchange">Mon courriel</a></li></ul></li></ul></nav><div class="search-site"><h2>Recherche</h2><html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers">
+
+    <form action="rechercher/" method="get" accept-charset="utf-8" class="header-search">
+        <input type="search" id="query" title="" class="text" name="q" />
+        <button class="submit">Envoyer</button>
+
+        <div class="target"><div class="container">Ce site<input type="radio" name="target" value="admission" data-id="/rechercher/" checked="checked">Tout UdeM<input type="radio" name="target" value="udem" data-id="https://www.google.ca/cse">                    <input type="hidden" name="cx" value="011926736769028447783:qlpu3so2kqq" />
+                    <input type="hidden" name="ie" value="UTF-8" /></div></div>
+    </form>
+
+
+
+</div><div class="l-nav"><nav class="navigation-connexion bar" role="navigation"><h2>Navigation de connexion</h2><ul><li class="udemConnSub"><button class="udemConnSubButton">Mon compte</button><ul class="js-none"><li><a class="login" href="#">Connexion</a></li><li><a class="create-account" href="#">Créer un compte</a></li></ul></li><div id="login-box">
+				<section class="login-box">
+					<div class="content popupheader">
+						<div class="popup-head">
+							<h3 class="popup-title">Connexion</h3>
+							<div class="actions">
+								<span class="noAccountLabel">Vous n'avez pas de compte?</span>
+								<a class="create-account-swap" href="#">Créer un compte</a>
+								<button class="close-btn link link-close exit-popup">X Fermer</button>
+							</div>
+						</div>
+					</div>
+					<div class="content popup-body">
+						<button class="back-btn link link-close exit-popup"><i class="ico-back"></i> RETOUR</button>
+						<h3 class="howtolabel">Choisissez un moyen d'ouvrir une session</h3>
+						<div class="table"><div id="c2603"><style>
+    @media only screen and (max-width:767px) {  .l-section.l-connect .l-main .cell.popupcell .form-border {  border-left: none;  padding-left: 0px;  }  .header-connexion {  height: 50px;  }  .l-content-only .l-main {  padding: 0.75em !important;  }  h3 {  display: block !important;  }  } 
+</style></div><a id="c1287"></a>
+
+
+
+
+
+<div class="cell socialcell">
+    <h4  class="howtolabel">Avec vos identifiants courants</h4>
+    <div class="social-media-connect">
+        <span><a href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1486787494884839&amp;scope=email,user_location,user_birthday,user_education_history&amp;redirect_uri=https%3A%2F%2Fadmission.umontreal.ca%2Fconnexion%2Fsocial%2Ffacebook%2F" onclick="showLoadingRedirect()"  class="btn btn-facebook-connect btn-new"  target="_top" >Connexion avec Facebook</a></span>
+        <span><a href="https://accounts.google.com/o/oauth2/auth?scope=profile%20email&amp;state=%2Fprofile&amp;response_type=code&amp;client_id=701782668483-05ht6nuj6mju2icff4evnd6fvchmi57i.apps.googleusercontent.com&amp;approval_prompt=auto&amp;include_granted_scopes=true&amp;redirect_uri=https%3A%2F%2Fadmission.umontreal.ca%2Fconnexion%2Fsocial%2Fgoogle%2F" onclick="showLoadingRedirect()"  class="btn btn-google-connect btn-new"  target="_top" >
+            <span class="icon"></span>
+            <span class="buttonText">Connexion avec Google</span>
+        </a></span>
+        <span><a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&amp;client_id=77yz7x716klg0p&amp;scope=r_liteprofile+r_emailaddress&amp;state=AUMKK874NJ3KhJk3LKHY&amp;redirect_uri=https://admission.umontreal.ca/connexion/social/linkedin/" onclick="showLoadingRedirect()"  class="btn btn-linkedin-connect btn-new"  target="_top" >Connexion avec Linkedin</a></span>
+
+    </div>
+    <div class="divload"><img class="socialLoading" src="/fileadmin/templates/img/large-ajaxloader.gif" alt="Chargement"></div>
+    
+    <h4 class="ou"><span>Ou</span></h4>
+
+    <span>
+ 
+                <a class="btn btn-unip-connect btn-new" href="/connexionunip/social/createbycas/?tx_lboguide_pluginconnexion%5Bcontroller%5D=Users&amp;cHash=2cedc27b7e7822a5f21eabc208de17d0">Connexion avec votre UNIP</a>
+                
+</span>
+        <span class="uniphint">
+            <a href="http://www.etudes.umontreal.ca/dossier/unip.html" target="_blank">Qu&#039;est-ce que l&#039;UNIP?</a>
+        </span>
+    <button class="btn btn-other-connect btn-new">Connexion par courriel</button>
+    
+</div>
+<a id="c1288"></a>
+<div class="cell popupcell">
+    <div class="form-border">
+    <h4 class="howtolabel">Avec votre compte Explorateur UdeM</h4>
+
+    <!--  -->
+    <div class="errors">
+        
+    </div>
+    <!-- ###LOGIN_FORM### -->
+    <form id='login-form' action="/cours-et-horaires/cours/ift-2505/?tx_felogin_pi1[show-login-box]=1" target="_top" method="post" class="form form-vertical" onsubmit="; return true;">
+    	<!-- <legend>Connexion</legend> -->
+    	<div class="formfield">
+    		<label for="user" id="label-user">Courriel</label>
+    		<div class="form-row">
+                    <i class="ico-mail"></i>
+                    <input type="text" id="user" name="user" value="" aria-labelledby="label-user" class="field" />
+                </div>
+    	</div>
+    	<div class="formfield">
+    		<label for="pass">Mot de passe</label>
+                <div class="form-row">
+                    <i class="ico-lock"></i>
+                    <input type="password" id="pass" name="pass" value="" class="field" data-rsa-encryption="" />
+                </div>
+            <!--###FORGOTP_VALID###-->
+            <span><a href="/?tx_felogin_pi1%5Bforgot%5D=1">Mot de passe oublié?</a> | <a href="/aide" target="_BLANK">Besoin d'aide?</a></span>
+            <!--###FORGOTP_VALID###-->
+    	</div>
+
+    	<!--###PERMALOGIN_VALID###-->
+		<div class="permalogin">
+			<input name="permalogin" value="0" type="hidden" disabled="disabled" id="permaloginHiddenField" />
+			<input name="permalogin" value="1" type="checkbox" checked="checked" id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" aria-labelledby="label-permalogin"/>
+                        <label for="permalogin" id="label-permalogin"><span></span>Garder ma session active</label>
+		</div>
+    	<!--###PERMALOGIN_VALID###-->
+
+        <button type="submit" class="btn-connexion" name="submit" id="login-btn">Connexion</button>
+
+    	<div class="felogin-hidden">
+    		<input type="hidden" name="logintype" value="login" />
+    		<input type="hidden" name="pid" value="18" />
+    		<input type="hidden" name="redirect_url" value="/redirection-login/" />
+    		<input type="hidden" name="tx_felogin_pi1[noredirect]" value="0" />
+            <input type="hidden" name="normalMode" value="1" />
+    		
+    	</div>
+    </form>
+    </div>
+    <div class="form-actions">
+        <p>Vous n'avez pas de compte?</p>
+        <a href="/creer-un-compte/" class="create-account-swap">CRÉER UN COMPTE</a>
+    </div>
+</div>
+    <!-- ###LOGIN_FORM### -->
+
+    </div>
+					</div>
+				</section>
+			</div><div id="create-account-box">
+			    <section class="login-box">
+			        <div class="content header clearfix popupheader">
+                  <div class="popup-head">
+				  <h3 class="popup-title">Créer un compte</h3>
+
+			            <div class="actions">
+                      <span class="noAccountLabel">Vous avez déjà un compte?</span>
+
+			                <button class="close-btn link link-close exit-popup">X Fermer</button>
+			            </div>
+			        </div>
+					</div>
+			        <div class="content popup-body">
+						<button class="back-btn link link-close exit-popup"><i class="ico-back"></i> RETOUR</button>
+			            <h3 class="howtolabel">Plusieurs moyens s'offrent à vous pour créer un compte</h3>
+
+			            <div class="table"><div id="c2605"><style>
+    @media only screen and (max-width:767px) {  .l-section.l-connect .l-main .cell.popupcell .form-border {  border-left: none;  padding-left: 0px;  }  .header-connexion {  height: 50px;  }  .l-content-only .l-main {  padding: 0.75em !important;  }  h3 {  display: block !important;  }  } 
+</style></div><a id="c1289"></a>
+
+
+
+
+
+<div class="cell socialcell">
+    <h4  class="howtolabel">Utilisez vos identifiants courants</h4>
+    <div class="social-media-connect">
+        <span><a href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1486787494884839&amp;scope=email,user_location,user_birthday,user_education_history&amp;redirect_uri=https%3A%2F%2Fadmission.umontreal.ca%2Fconnexion%2Fsocial%2Ffacebook%2F" onclick="showLoadingRedirect()"  class="btn btn-facebook-connect btn-new"  target="_top" >Inscription avec Facebook</a></span>
+        <span><a href="https://accounts.google.com/o/oauth2/auth?scope=profile%20email&amp;state=%2Fprofile&amp;response_type=code&amp;client_id=701782668483-05ht6nuj6mju2icff4evnd6fvchmi57i.apps.googleusercontent.com&amp;approval_prompt=auto&amp;include_granted_scopes=true&amp;redirect_uri=https%3A%2F%2Fadmission.umontreal.ca%2Fconnexion%2Fsocial%2Fgoogle%2F" onclick="showLoadingRedirect()"  class="btn btn-google-connect btn-new"  target="_top" >
+            <span class="icon"></span>
+            <span class="buttonText">Inscription avec Google</span>
+        </a></span>
+        <span><a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&amp;client_id=77yz7x716klg0p&amp;scope=r_liteprofile+r_emailaddress&amp;state=AUMKK874NJ3KhJk3LKHY&amp;redirect_uri=https://admission.umontreal.ca/connexion/social/linkedin/" onclick="showLoadingRedirect()"  class="btn btn-linkedin-connect btn-new"  target="_top" >Inscription avec Linkedin</a></span>
+
+    </div>
+    <div class="divload"><img class="socialLoading" src="/fileadmin/templates/img/large-ajaxloader.gif" alt="Chargement"></div>
+    
+        <p class="hint">La connexion via un réseau social sert uniquement à simplifier votre inscription : nous ne publierons rien sur votre page. En vous inscrivant, vous consentez à recevoir des courriels de l’UdeM.</p>
+    
+    <h4 class="ou"><span>Ou</span></h4>
+
+    <span>
+ 
+                <a class="btn btn-unip-connect btn-new" href="/connexionunip/social/createbycas/?tx_lboguide_pluginconnexion%5Bcontroller%5D=Users&amp;cHash=2cedc27b7e7822a5f21eabc208de17d0">Inscription avec votre UNIP</a>
+                
+</span>
+        <span class="uniphint">
+            <a href="http://www.etudes.umontreal.ca/dossier/unip.html" target="_blank">Qu&#039;est-ce que l&#039;UNIP?</a>
+        </span>
+    <button class="btn btn-other-connect btn-new">Inscription par courriel</button>
+    
+    <div class="form-actions">
+
+        <p>Vous avez déjà un compte?</p>
+        <a href="/connexion/" class="login">OUVREZ UNE SESSION</a>
+    </div>
+    
+</div>
+<a id="c1290"></a><div class="cell popupcell">
+    <div class="form-border">
+        <h4 id="index" class="howtolabel">
+            Ou utilisez un courriel
+        </h4>
+        <form method="post" name="user" class="form form-vertical" id="form-inscription" action="/cours-et-horaires/?tx_lboguide_plugincreation%5Baction%5D=index&amp;tx_lboguide_plugincreation%5Bcontroller%5D=Users&amp;cHash=dd4936fda02cb760929fae2e9459aef3">
+<div>
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][@extension]" value="LboGuide" />
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][@vendor]" value="Libeo" />
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][@controller]" value="Users" />
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][@action]" value="index" />
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][arguments]" value="YTowOnt9f8aac75282d8c309f70c77200bf13aeca0772656" />
+<input type="hidden" name="tx_lboguide_plugincreation[__referrer][@request]" value="a:4:{s:10:&quot;@extension&quot;;s:8:&quot;LboGuide&quot;;s:11:&quot;@controller&quot;;s:5:&quot;Users&quot;;s:7:&quot;@action&quot;;s:5:&quot;index&quot;;s:7:&quot;@vendor&quot;;s:5:&quot;Libeo&quot;;}02e17086c2c842a15f72cdaf5d5a569ab8973494" />
+<input type="hidden" name="tx_lboguide_plugincreation[__trustedProperties]" value="a:3:{s:4:&quot;user&quot;;a:8:{s:10:&quot;firstNameS&quot;;i:1;s:9:&quot;lastNameL&quot;;i:1;s:9:&quot;usernameK&quot;;i:1;s:9:&quot;firstName&quot;;i:1;s:8:&quot;lastName&quot;;i:1;s:8:&quot;username&quot;;i:1;s:8:&quot;password&quot;;i:1;s:19:&quot;bulletinInformation&quot;;i:1;}s:13:&quot;codeReference&quot;;i:1;s:6:&quot;submit&quot;;i:1;}213df7c43f4496b8612817abb5c0ba839631897b" />
+</div>
+
+
+            
+            <div class="formfield">
+                <label for="firstNameS" id="label-firstName">
+                    
+                    Prénom
+                    :
+                </label>
+                
+                <input aria-labelledby="label-firstName error-firstName" class="firstName field" id="firstNameS" type="text" name="tx_lboguide_plugincreation[user][firstNameS]" value="" />
+            </div>
+            <div class="formfield">
+                <label for="lastNameL" id="label-lastName">
+                    
+                    Nom
+                    :
+                </label>
+                
+                <input aria-labelledby="label-lastName error-lastName" class="lastName field" id="lastNameL" type="text" name="tx_lboguide_plugincreation[user][lastNameL]" value="" />
+            </div>
+            <div class="formfield">
+                <label for="email" id="label-email">
+                    
+                    Courriel
+                    :
+                </label>
+                
+                <div class="form-row">
+                    <i class="ico-mail"></i>
+                    <input aria-labelledby="label-email error-username" class="field" id="email" type="text" name="tx_lboguide_plugincreation[user][usernameK]" value="" />
+                </div>
+                <span class="field-infos">
+                    En saisissant votre courriel, vous consentez à recevoir des communications de l’UdeM.
+                </span>
+            </div>
+            <div>
+                <label class="security" for="firstName"></label>
+                <input class="security" id="firstName" type="text" name="tx_lboguide_plugincreation[user][firstName]" value="" />
+                <label class="security" for="lastName"></label>
+                <input class="security" id="lastName" type="text" name="tx_lboguide_plugincreation[user][lastName]" value="" />
+                <label class="security" for="username"></label>
+                <input class="security" id="username" type="text" name="tx_lboguide_plugincreation[user][username]" value="" />
+            </div>
+            <div class="formfield">
+                <label for="password" id="label-password">
+                    
+                    Mot de passe
+                    :
+                </label>
+                
+                <div class="form-row">
+                    <i class="ico-lock"></i>
+                    <input aria-labelledby="label-password error-password" class="password field" id="password" type="password" name="tx_lboguide_plugincreation[user][password]" value="" />
+                </div>
+                <span class="field-infos">
+                Minimum 6 caractères
+            </span>
+            </div>
+
+            <div class="formfield">
+                <label for="codeReference" id="label-codeReference">
+                    <a id="codeReference-lien" href="#">
+                        Code de référence (si applicable)
+                    </a>
+                    
+                </label>
+                <input aria-labelledby="label-codeReference" class="field" id="codeReference" type="text" name="tx_lboguide_plugincreation[codeReference]" />
+            </div>
+            
+            <input id="bulletinInformation" type="hidden" name="tx_lboguide_plugincreation[user][bulletinInformation]" value="check" />
+            <!-- <input class="btn-valider" type="submit" value="S'inscrire" name="tx_lboguide_plugincreation[submit]" /> -->
+            <button type="submit" name="submit" class="btn-valider">
+                S&#039;inscrire
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+			        </div>
+			    </section>
+			</div><li><a href="/cours-et-horaires/" class="link-customization-settings">Mes réglages</a></li><li><a href="/nous-joindre/">Nous joindre</a></li></ul></nav><nav class="navigation-traduction bar" role="navigation"><h2>Navigation vers les microsites en version traduite</h2><ul><li class="hidden"><a href="/cours-et-horaires/cours/ift-2505/" lang="fr">Site en français</a><e9b9/li><li><a href="/en" lang="en">Site in English</a></li><li><a href="/brasil/" lang="pt">Microsite versão em Português</a></li></ul></nav></div></div></header></div>
+
+
+    <div class="l-fake">
+        <!--TYPO3SEARCH_begin-->
+        <div id="c106">
+
+
+
+<div class="l-featured">
+    <div class="featured">
+        <div class="l-wrap">
+            <div class="featuredContent">
+                <nav class="featuredBreadcrumb bar" role="navigation"><h2>Fil d'arianne</h2><ul><li><a href="/">Accueil</a><img src="/fileadmin/templates/img/icn-sep-breadcrumb.png" alt=""></li><li class="isSelected">Optimisation linéaire</li></ul></nav>
+                <h1 class="featuredTitle">Optimisation linéaire</h1>
+            </div>
+            <span class="featuredLogoUdem"></span>
+        </div>
+    </div>
+</div>
+<div class="l-main" role="main">
+    <div class="l-wrap">
+        <h2>IFT 2505 - Optimisation linéaire</h2>
+        <section class="sommaire-cours">
+            <div class="sommaireCol">
+                <section class="specs">
+                    
+                        <div class="specItem">
+                            <span class="specTitle notUpperCase">No DE COURS</span>
+                            <p class="specDefinition">IFT 2505</p>
+                        </div>
+                    
+                    
+                    
+                        <div class="specItem">
+                            <span class="specTitle infobulle-glossaire-moyen" data-id="credit">
+                                
+                                        Crédits
+                                    
+                            </span>
+                            <p class="specDefinition">3.0</p>
+                        </div>
+                    
+                    
+                        <div class="specItem">
+                            <span class="specTitle infobulle-glossaire-moyen" data-id="cycle">Cycle</span>
+                            <p class="specDefinition">
+                                1<sup>er</sup> cycle
+                            </p>
+                        </div>
+                    
+                    
+                        <div class="specItem">
+                            <span class="specTitle">Département</span>
+                            <p class="specDefinition">Informatique et rech. opér.</p>
+                        </div>
+                    
+                    
+                        <div class="specItem">
+                            <span class="specTitle">Faculté</span>
+                            <p class="specDefinition">Faculté des arts et des sciences</p>
+                        </div>
+                    
+
+                    
+
+                    
+                        <div class="specItem">
+                            <span class="specTitle">Trimestre</span>
+                            <p class="specDefinition">
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                            </p>
+                        </div>
+                    
+
+                    
+                        <div class="specItem description">
+                            <span class="specTitle">Description</span>
+                            <p class="specDefinition">Modèles linéaires. Méthode du simplexe. Dualité. Postoptimisation. Analyse de sensibilité. Problèmes à structures particulières. Modèles en nombres entiers. Méthodes de coupes. Séparation et évaluation progressive.</p>
+                        </div>
+                    
+                </section>
+            </div>
+
+            <div class="sommaireCol attributes">
+                
+                    <p class="sommaireTitle">Particularités</p>
+                    <ul class="sommaireList">
+                        
+                        
+                        
+                        
+                        
+                            <li class="icn-online">Cours offert en ligne</li>
+                        
+                        
+                        
+                        
+                    </ul>
+
+                    <p class="specDefinition">
+                        Ces informations sont publiées à titre indicatif seulement. Elles varient d'un trimestre à l'autre. Pour connaître les Particularités de ce cours par trimestre et par section, consultez <a target="_blank" href="https://academique-dmz.synchro.umontreal.ca/psc/acprpr9_pub/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.CLASS_SEARCH.GBL">le Centre étudiant</a>.
+                    </p>
+
+                
+
+                
+                    <p class="sommaireTitle infobulle-glossaire-moyen" data-id="exigences_cours">Exigences d&#039;inscription</p>
+                    <p class="specDefinition">
+                        Préalable: MAT1600
+                    </p>
+                
+            </div>
+
+            
+                <div class="sommaireCol">
+                    <div class="sommmaireListeProg">
+                        <h3>Ce cours est offert dans ces programmes d&#039;études</h3>
+                        <ul>
+                            
+                                <li><a href="/programmes/baccalaureat-en-informatique/">Baccalauréat en informatique (1-175-1-0)</a></li>
+                            
+                                <li><a href="/programmes/majeure-en-informatique/">Majeure en informatique (1-175-2-0)</a></li>
+                            
+                                <li><a href="/programmes/mineure-en-informatique/">Mineure en informatique (1-175-4-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-mathematiques/">Baccalauréat en mathématiques (1-190-1-0)</a></li>
+                            
+                                <li><a href="/programmes/majeure-en-mathematiques/">Majeure en mathématiques (1-190-2-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-mathematiques-et-informatique/">Baccalauréat en mathématiques et informatique (1-191-1-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-mathematiques-et-economie/">Baccalauréat en mathématiques et économie (1-193-1-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-physique-et-informatique/">Baccalauréat en physique et informatique (1-205-1-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-bio-informatique-1/">Baccalauréat en bio-informatique (1-468-1-0)</a></li>
+                            
+                                <li><a href="/programmes/baccalaureat-en-bio-informatique/">Baccalauréat en bio-informatique (1-468-1-1)</a></li>
+                            
+                                <li><a href="/programmes/programme-daccueil-en-sciences/">Programme d'accueil en sciences (1-967-1-0)</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            
+        </section>
+
+        <h3>Aperçu des horaires</h3>
+
+        <p>
+            <p>Pour obtenir les renseignements les plus à jour concernant l'horaire de ce cours, visitez <a href="https://academique-dmz.synchro.umontreal.ca/psc/acprpr9_pub/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.CLASS_SEARCH.GBL" target="_blank">le Centre étudiant</a>. Si vous éprouvez des difficultés à naviguer dans le Centre étudiant, <a href="http://www.etudes.umontreal.ca/joindre/index.html" target="_blank">communiquez avec notre équipe</a>.</p>
+        </p>
+
+        <section class="folder js-folder horaire-folder">
+            
+        </section>
+
+        <section class="folder js-folder horaire-folder">
+            <div class="fold js-fold js-default-open">
+                <span class="foldButton js-foldButton">Comment consulter les horaires dans le Centre étudiant</span>
+                <div class="foldContent js-foldContent">
+                    <div id="c1018"><table summary="" class="nostyle"><tbody><tr><th scope="">Choisir l'établissement et le trimestre</th><th scope="">Saisir la matière et le numéro</th><th scope="">Cliquer sur le bouton rechercher</th></tr><tr><td><img src="/fileadmin/templates/img/horaire-vide-procedure-1.png" width="269" height="105" title="horaire-vide-procedure-1.png" /></td><td><img src="/fileadmin/templates/img/horaire-vide-procedure-2.png" width="269" height="106" title="horaire-vide-procedure-2.png" /></td><td><img src="/fileadmin/templates/img/horaire-vide-procedure-3.png" width="269" height="105" title="horaire-vide-procedure-3.png" /></td></tr><tr><td>Choisissez l'Université de Montréal dans la liste déroulante de l'établissement et choisissez le trimestre pour lequel vous souhaitez connaître l'horaire.</td><td>Dans le champ «&nbsp;Sélectionnez matière&nbsp;», entrez les trois premières lettres du sigle de cours. Entrez ensuite les quatre à cinq chiffres du sigle du cours. Par exemple, pour le cours ORA 1125, entrez d'abord ORA, puis 1125.</td><td>Cliquez sur le bouton «&nbsp;Rechercher&nbsp;» pour obtenir l'horaire de ce cours au trimestre souhaité.<br /><br /><a href="https://academique-dmz.synchro.umontreal.ca/psc/acprpr9_pub/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.CLASS_SEARCH.GBL" target="_blank" class="btn">Trouvez l'horaire d'un cours</a></td></tr></tbody></table></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+        <!--TYPO3SEARCH_end-->
+    </div>
+
+
+<footer class="l-footer" role="contentinfo"><div class="l-prefooter"><aside role="complementary"><nav class="navigation-echo" role="navigation"><h2>Rappel de la navigation principale</h2><ul><li><a href="/programmes-detudes/">Études</a><ul><li><span>Programmes d’études au 1<sup>er</sup> cycle</span><ul><li><a href="http://admission.umontreal.ca/programmes-de-1er-cycle/">De A à Z</a></li><li><a href="/programmes-de-1er-cycle-ouverts/">Ouverts au prochain trimestre</a></li><li><a href="/programmes-de-1er-cycle-individualises/">Programmes individualisés</a></li><li><a href="/programmes-de-preparation-aux-etudes-universitaires/">Préparation aux études universitaires</a></li></ul></li><li><span>Programmes d’études aux cycles supérieurs</span><ul><li><a href="http://admission.umontreal.ca/programmes-de-cycles-superieurs/">De A à Z</a></li><li><a href="/programmes-de-cycles-superieurs-ouverts/">Ouverts au prochain trimestre</a></li></ul></li><li><span>Cours offerts</span><ul><li><a href="/repertoire-des-cours/">De A à Z</a></li><li><a href="https://admission.umontreal.ca/cours-offerts-soir/">Le soir</a></li><li><a href="https://admission.umontreal.ca/cours-offerts-ete/">L’été</a></li></ul></li></ul></li><li><a href="/admission/">Admission</a><ul><li><span>Préparation de la demande</span><ul><li><a href="/admission/preparation-de-la-demande/faire-les-bons-choix-de-programmes/">Faire les bons choix de programmes d'études</a></li><li><a href="/admission/preparation-de-la-demande/verifier-les-conditions-dadmissibilite/">Vérifier les conditions d'admissibilité</a></li><li><a href="/admission/preparation-de-la-demande/respecter-les-dates-limites-de-depot/">Respecter les dates limites</a></li><li><a href="/admission/preparation-de-la-demande/comprendre-levaluation-des-dossiers/">Comprendre l'évaluation des dossiers</a></li><li><a href="/admission/preparation-de-la-demande/prevoir-les-entrevues-et-les-tests/">Prévoir les entrevues et les tests</a></li></ul></li><li><span>Dépôt de la demande</span><ul><li><a href="/admission/depot-de-la-demande/demande-dadmission/">Demande d'admission</a></li><li><a href="/admission/depot-de-la-demande/poursuivre-une-demande-inachevee/">Poursuivre une demande inachevée</a></li><li><a href="/admission/depot-de-la-demande/poursuivre-un-baccalaureat-par-cumul/">Poursuivre un baccalauréat par cumul</a></li><li><a href="/admission/depot-de-la-demande/payer-les-frais-dadmission/">Payer les frais d'admission</a></li></ul></li><li><span>Après la demande</span><ul><li><a href="/admission/apres-la-demande/suivre-votre-dossier/">Suivre votre dossier</a></li><li><a href="/admission/apres-la-demande/modifier-une-demande-dadmission/">Modifier une demande d'admission</a></li><li><a href="/admission/apres-la-demande/recevoir-une-reponse/">Recevoir une réponse</a></li><li><a href="/admission/apres-la-demande/demander-une-revision-du-dossier/">Demander une révision du dossier d'admission</a></li><li><a href="/admission/apres-la-demande/choix-subsequent/">Faire un choix subséquent</a></li><li><a href="/admission/apres-la-demande/etre-admis-les-prochaines-etapes/">Être admis : les prochaines étapes</a></li></ul></li></ul></li><li><a href="/info-conseils/">Info-conseils</a><ul><li><span>Blogue Objectif UdeM</span></li><li><span>Choisir l'UdeM</span><ul><li><a href="/info-conseils/choisir-ludem/pourquoi-ludem/?no_cache=1">Pourquoi l'UdeM?</a></li><li><a href="/info-conseils/choisir-ludem/milieu-de-vie/">Milieu de vie</a></li><li><a href="/info-conseils/choisir-ludem/services-aux-etudiants/">Services aux étudiants</a></li><li><a href="/info-conseils/choisir-ludem/le-sport-a-ludem/">Le sport à l'UdeM</a></li></ul></li><li><span>Outils et astuces</span><ul><li><a href="/info-conseils/outils-et-astuces/apercu-des-outils/">Aperçu des outils</a></li><li><a href="https://admission.umontreal.ca/affiniti/fr/">Affiniti</a></li><li><a href="/brochures-electroniques/">Brochure pour futurs étudiants</a></li><li><a href="http://registraire.umontreal.ca/droits-de-scolarite/calculateur-des-frais-de-scolarite/">Calculateur des coûts</a></li><li><a href="/comparer-les-programmes/">Comparateur de programmes</a></li><li><a href="/info-conseils/outils-et-astuces/des-ambassadeurs-qui-font-la-difference/">Des ambassadeurs qui font la différence</a></li><li><a href="/info-conseils/outils-et-astuces/foire-aux-questions/">Foire aux questions</a></li><li><a href="/info-conseils/outils-et-astuces/financer-ses-etudes/">Financer ses études</a></li><li><a href="/info-conseils/outils-et-astuces/glossaire/">Glossaire</a></li><li><a href="/info-conseils/outils-et-astuces/guide-dadmission/">Guide d'admission</a></li><li><a href="/info-conseils/outils-et-astuces/parcours/">Parcours : 4 étapes pour entrer à l'UdeM</a></li><li><a href="/admission/planificateur/">Planificateur – Année préparatoire</a></li><li><a href="/info-conseils/outils-et-astuces/publications/">Publications</a></li><li><a href="/info-conseils/outils-et-astuces/prevoir-son-budget/">Prévoir son budget</a></li><li><a href="/info-conseils/outils-et-astuces/trouver-son-directeur-de-recherche/">Trouver son directeur de recherche</a></li><li><a href="/info-conseils/outils-et-astuces/cursus/">Test Cursus: trouver sa voie</a></li></ul></li></ul></li><li><a href="/evenements/">Événements</a><ul><li><span>Sur le Web</span><ul><li><a href="/les-portes-ouvertes-se-transforment/">Les Rendez-vous des futurs étudiants</a></li><li><a href="http://admission.umontreal.ca/evenements/sur-le-web/seances-d-information-en-ligne/">Séances d'information</a></li><li><a href="/des-questions-pour-les-ambassadeurs/">Des questions pour les ambassadeurs?</a></li></ul></li><li><span>Sur le campus</span><ul><li><a href="/universite-de-montreal/visite-virtuelle/">Visite virtuelle des pavillons</a></li></ul></li><li><span>En rediffusion</span><ul><li><a href="/videos-sur-demande/programmes-de-1er-cycle/">Programmes de 1er cycle</a></li><li><a href="/videos-sur-demande/programmes-de-cycles-superieurs/">Programmes de cycles supérieurs</a></li><li><a href="/videos-sur-demande/admission-et-services-aux-etudiants/">Admission et services aux étudiants</a></li><li><a href="/videos-sur-demande/ressources-pour-etudiants-internationaux/">Ressources pour étudiants internationaux</a></li></ul></li></ul></li><li><a href="/vous-etes/">Vous êtes...</a><ul><li><a href="/vous-etes/futurs-etudiants/">Futurs étudiants</a></li><li><a href="/vous-etes/etudiants-admis/">Étudiants admis</a></li><li><a href="/vous-etes/parents/">Parents</a></li><li><a href="/vous-etes/conseillers/">Conseillers</a></li></ul></li></ul></nav></aside></div><div class="l-mainfooter"><aside class="contact" role="complementary"><h2>Nous joindre</h2><section class="contactSar"><img src="/fileadmin/templates/img/logo-sar-2021.png" width="132" height="52"   alt="" ><div id="c28"><p>Programmes d'études, cours, conseils et accompagnement.</p></div></section><div class="contactMap"><div id="c242"><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap" data-csc-images="1" data-csc-cols="2"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><figure class="csc-textpic-image csc-textpic-last"><a href="/nous-joindre/"><img src="/fileadmin/templates/img/pic-placeholder-map.jpg" width="243" height="126" alt=""></a></figure></div></div></div></div></div></div><section class="contactUs"><div id="c27"><p><b>Université de Montréal&nbsp;</b><br />Service de l’admission et du recrutement<br />C. P. 6205, succursale Centre-ville<br />Montréal, (Québec) H3C 3T5<br />Canada</p></div><ul><li><a href="/nous-joindre/">Nous joindre</a></li><li><a href="https://www.facebook.com/UniversitedeMontreal" lang="en">Facebook</a></li><li><a href="http://twitter.com/umontreal" lang="en">Twitter</a></li></ul></section></aside></div><div class="l-subfooter"><aside role="complementary"><a href="http://www.umontreal.ca">Université de Montréal</a><nav class="navigation-meta bar" role="navigation"><h2>Méta navigation</h2><ul><li><a href="http://www.umontreal.ca/joindre.html">Nous joindre</a></li><li><a href="http://urgence.umontreal.ca">Urgence</a></li><li><a href="http://www.carrieres.umontreal.ca/">Offres d'emploi</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></nav><nav role="navigation" class="navigation-social bar"><h2>Réseaux sociaux</h2><ul><li><a href="https://www.facebook.com/umontreal" class="facebook" lang="en">Facebook</a></li><li><a href="http://twitter.com/umontreal" class="twitter" lang="en">Twitter</a></li><li><a href="http://www.youtube.com/udemvideo" class="youtube" lang="en">YouTube</a></li></ul></nav></aside></div></footer>
+<div class="tx-qm-messages">
+	
+    
+
+    
+    
+    
+    
+
+
+
+</div>    <div class="font_preload" style="opacity: 0">
+        <span style="font-family: 'DINRegular', Arial, sans-serif;"></span>
+        <span style="font-family: 'DINMedium', Arial, sans-serif;"></span>
+    </div><div id="customization-settings-box" class="future-popup">
+        <section class="login-box settings-box">
+            <div class="content header clearfix popupheader">
+                <div class="popup-head">
+                    <h3 class="popup-title">Mes réglages</h3>
+                    <div class="actions">
+                        <button class="close-btn link link-close exit-popup">X Fermer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content popup-body">
+                <div class="table"><div id="c19741"><div class="Tx-Formhandler">
+		
+
+<form action="/cours-et-horaires/cours/ift-2505/" method="post" class="form form-vertical" id="customization-settings" enctype="multipart/form-data" >
+  <div class="hidden">
+  	
+			<input type="hidden" name="id" value="163" />
+			<input type="hidden" name="customization_settings[submitted]" value="1" />
+		
+			<input type="hidden" name="customization_settings[randomID]" value="customizationSettingsID" />
+		
+			<input type="hidden" id="removeFile-customizationSettingsID" name="customization_settings[removeFile]" value="" />
+		
+			<input type="hidden" id="removeFileField-customizationSettingsID" name="customization_settings[removeFileField]" value="" />
+		
+			<input type="hidden" id="submitField-customizationSettingsID" name="customization_settings[submitField]" value="" />
+		
+			<input type="hidden"  name="customization_settings[step-2-next]"  id="ieHiddenField-customizationSettingsID" value="1" />
+		
+  </div>
+
+
+	
+
+	<section>
+		<div class="l-wrap">
+			
+<fieldset class="l-onethird js-niveaux-customization-settings">
+
+	<h2 >Cycle d'études d'intérêt <span class="mandatory_niveau_souhaite"></span></h2>
+
+    
+
+	<label for="niveau_bac">
+		<input type="radio" id="niveau_bac" name="customization_settings[niveau_souhaite][]" value="1er cycle (baccalauréat, majeure, etc.)" >
+		<span>1<sup>er</sup> cycle (baccalauréat, majeure, etc.)</span>
+	</label>
+
+	<label for="niveau_maitrise">
+		<input type="radio" id="niveau_maitrise" name="customization_settings[niveau_souhaite][]" value="2e cycle (maîtrise/master, DESS, etc.)" >
+		<span>2<sup>e</sup> cycle (maîtrise/master, DESS, etc.)</span>
+	</label>
+
+	<label for="niveau_doctorat">
+		<input type="radio" id="niveau_doctorat" name="customization_settings[niveau_souhaite][]" value="3e cycle (doctorat)" >
+		<span>3<sup>e</sup> cycle (doctorat)</span>
+	</label>
+
+    <label for="niveau_postdoctoraux">
+        <input type="radio" id="niveau_postdoctoraux" name="customization_settings[niveau_souhaite][]" value="Stages postdoctoraux" >
+		<span>Stages postdoctoraux</span>
+    </label>
+
+</fieldset>
+
+<input id="niveau_id" type="hidden" name="customization_settings[niveau_id]" value=""/>
+
+
+		</div>
+	</section>
+
+	<hr>
+
+	<section>
+		<div class="l-wrap">
+			
+<fieldset class="l-onethird js-previous-studies-customization-settings">
+
+	<h2 >Études antérieures <span class="mandatory_previous_studies"></span></h2>
+
+    
+
+	<label for="studies_quebec">
+		<input type="radio" id="studies_quebec" name="customization_settings[previous_studies][]" value="quebec" >
+		<span>Au Québec</span>
+	</label>
+
+	<label for="studies_canada">
+		<input type="radio" id="studies_canada" name="customization_settings[previous_studies][]" value="canada" >
+		<span>Au Canada hors Québec</span>
+	</label>
+	<div id="customization-settings-province">
+		<div class="l-onethird indent-choice">
+			<label for="studies_province" > <span class="mandatory_province"></span></label>
+			<select id="studies_province" name="customization_settings[studies_province]">
+				<option value=''>Sélectioner une province</option>
+				<option value="161" >Alberta</option><option value="162" >Colombie-Britannique</option><option value="163" >Île-du-Prince-Édouard</option><option value="164" >Manitoba</option><option value="165" >Nouveau-Brunswick</option><option value="166" >Nouvelle-Écosse</option><option value="170" >Nunavut, Territoires du Nord-Ouest et Yukon</option><option value="167" >Ontario</option><option value="168" >Saskatchewan</option><option value="169" >Terre-Neuve et Labrador</option>
+			</select>
+		</div>
+	</div>
+
+	<label for="studies_abroad">
+		<input type="radio" id="studies_abroad" name="customization_settings[previous_studies][]" value="abroad" >
+		<span>À l'étranger</span>
+	</label>
+
+	<div id="customization-settings-pays">
+		<div class="l-onethird indent-choice">
+			<label for="studies_pays" > <span class="mandatory_pays_citoyen"></span></label>
+			<select id="studies_pays" name="customization_settings[studies_pays]">
+				<option value=''>Sélectionner un pays</option>
+				<option value="103" >Afghanistan</option><option value="1" >Afrique du Sud</option><option value="2" >Albanie</option><option value="3" >Algérie</option><option value="4" >Allemagne</option><option value="106" >Angola</option><option value="104" >Antilles anglaises (General Certificate of Education)</option><option value="105" >Antilles anglaises (High School Diploma)</option><option value="5" >Arabie saoudite</option><option value="6" >Argentine</option><option value="7" >Arménie</option><option value="8" >Australie</option><option value="9" >Autriche</option><option value="107" >Azerbaïdjan</option><option value="102" >Baccalauréat européen</option><option value="108" >Bahreïn, État de</option><option value="109" >Bangladesh</option><option value="10" >Belgique</option><option value="11" >Bénin</option><option value="12" >Biélorussie</option><option value="13" >Bolivie</option><option value="110" >Bosnie-Herzégovine</option><option value="111" >Botswana</option><option value="14" >Brésil</option><option value="15" >Bulgarie</option><option value="16" >Burkina Faso</option><option value="17" >Burundi</option><option value="18" >Cambodge</option><option value="20" >Cameroun (syst. anglophone)</option><option value="19" >Cameroun (syst. francophone)</option><option value="112" >Cap Vert, Îles du</option><option value="113" >Caraïbes anglaises (General Certificate of Education)</option><option value="114" >Caraïbes anglaises (High School Diploma)</option><option value="21" >Centrafricaine (République)</option><option value="22" >Chili</option><option value="23" >Chine</option><option value="115" >Chypre</option><option value="24" >Colombie</option><option value="25" >Comores (Union des)</option><option value="27" >Congo (Rép. populaire)</option><option value="26" >Congo (Rép.démocratique)</option><option value="28" >Corée du Nord (Rép. populaire dém. de Corée)</option><option value="29" >Corée du Sud (République de Corée)</option><option value="30" >Costa Rica</option><option value="31" >Côte d'Ivoire</option><option value="116" >Croatie</option><option value="32" >Cuba</option><option value="33" >Danemark</option><option value="34" >Djibouti</option><option value="36" >Égypte</option><option value="37" >El Salvador</option><option value="117" >Émirats arabes unis</option><option value="38" >Équateur</option><option value="39" >Espagne</option><option value="118" >Estonie</option><option value="40" >États-Unis</option><option value="119" >Éthiopie</option><option value="41" >Finlande</option><option value="42" >France</option><option value="43" >Gabon</option><option value="120" >Géorgie</option><option value="44" >Ghana</option><option value="45" >Grèce</option><option value="46" >Guatemala</option><option value="47" >Guinée-Conakry</option><option value="48" >Haïti</option><option value="49" >Honduras</option><option value="50" >Hong Kong</option><option value="51" >Hongrie</option><option value="52" >Inde</option><option value="121" >Indonésie</option><option value="123" >Irak</option><option value="53" >Iran</option><option value="122" >Irlande</option><option value="124" >Islande</option><option value="54" >Israël</option><option value="125" >Italie</option><option value="55" >Jamaïque</option><option value="56" >Japon</option><option value="126" >Jordanie</option><option value="57" >Kenya</option><option value="127" >Kirghizistan</option><option value="128" >Koweït</option><option value="58" >Laos</option><option value="129" >Lesotho</option><option value="130" >Lettonie</option><option value="59" >Liban</option><option value="131" >Liberia</option><option value="133" >Libye</option><option value="134" >Liechtenstein</option><option value="135" >Lituanie</option><option value="60" >Luxembourg</option><option value="136" >Macédoine</option><option value="61" >Madagascar</option><option value="137" >Malaisie</option><option value="62" >Mali</option><option value="138" >Malte</option><option value="63" >Maroc</option><option value="64" >Maurice (Île)</option><option value="65" >Mauritanie</option><option value="66" >Mexique</option><option value="67" >Moldavie</option><option value="139" >Monténégro, République du</option><option value="140" >Mozambique</option><option value="141" >Myanmar, Union de (Birmanie)</option><option value="142" >Namibie</option><option value="68" >Nicaragua</option><option value="69" >Niger</option><option value="171" >Nigéria</option><option value="143" >Norvège</option><option value="72" >Nouvelle-Zélande</option><option value="144" >Oman</option><option value="145" >Ouganda</option><option value="146" >Ouzbékistan</option><option value="73" >Pakistan</option><option value="147" >Palestine</option><option value="74" >Panama</option><option value="75" >Paraguay</option><option value="76" >Pays-Bas</option><option value="77" >Pérou</option><option value="148" >Philippines</option><option value="78" >Pologne</option><option value="79" >Portugal</option><option value="149" >Qatar</option><option value="35" >République dominicaine</option><option value="150" >République tchèque</option><option value="80" >Roumanie</option><option value="81" >Royaume-Uni</option><option value="631" >Royaume-Uni (Écosse)</option><option value="82" >Russie</option><option value="83" >Rwanda</option><option value="84" >Sénégal</option><option value="151" >Serbie</option><option value="85" >Singapour</option><option value="152" >Slovaquie, République de</option><option value="153" >Slovénie</option><option value="154" >Somalie</option><option value="155" >Soudan</option><option value="156" >Sri Lanka</option><option value="86" >Suède</option><option value="87" >Suisse</option><option value="88" >Syrie</option><option value="157" >Tadjikistan</option><option value="158" >Taïwan</option><option value="89" >Tanzanie</option><option value="90" >Tchad</option><option value="91" >Thaïlande</option><option value="160" >Timor Oriental</option><option value="92" >Togo</option><option value="93" >Trinité-et-Tobago</option><option value="94" >Tunisie</option><option value="95" >Turquie</option><option value="96" >Ukraine</option><option value="97" >Uruguay</option><option value="98" >Venezuela</option><option value="99" >Viêt Nam</option><option value="132" >Zambie</option><option value="100" >Zimbabwe</option>
+			</select>
+		</div>
+	</div>
+
+</fieldset>
+
+		</div>
+	</section>
+
+	<div class="l-wrap">
+		<div class="l-onethird">
+			
+<div class="type-button">
+	
+	<input type="submit"  name="customization_settings[step-2-next]"  class="btn submit" value="Sauvegarder" />
+	<div class="clear"></div>
+</div>
+
+		</div>
+	</div>
+
+	<input type="hidden" id="keepInMemory" name="customization_settings[keepInMemory]" value="niveau_bac,niveau_maitrise,niveau_doctorat,niveau_postdoctoraux,studies_quebec,studies_canada,studies_abroad,studies_province,studies_pays" />
+
+
+</form>
+
+
+	</div>
+	</div></div>
+            </div>
+        </section>
+    </div>
+
+<script src="/typo3temp/assets/compressed/merged-e44b824094b9c08fd930e0203311ab9e-11f7a90b92ed8a56ead60a2cb76dac18.js" type="text/javascript"></script>
+<script src="/typo3temp/assets/compressed/waypoints.jquery-896b86d97451f4022d86d6cba5e95c5e.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>
