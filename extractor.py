@@ -7,7 +7,7 @@ import re
 class Curriculum:
 
     soup_object = None 
-    course_list_json = None
+    course_data = None
 
     def __init__(self, discipline, link):
         self.discipline = discipline
@@ -36,7 +36,7 @@ soup = test.soupify()
 # files in. If it does not exist it will create it.
 # functions having the UdeM are specific to university of montreal
 # later on it could be possible to extend the extractor for other universities
-def dl_course_pages_UdeM(soup_object, directory_name):
+def dl_course_pages_UdeM(soup_object, directory_name : str):
     courses = soup.find_all('tbody', class_="programmeCourse fold")
     os.system('mkdir ' + directory_name)
     
@@ -65,8 +65,8 @@ def dl_course_pages_UdeM(soup_object, directory_name):
 # if there is no prerequisites it will return 0
 # certain rules must be applied later on to filter obsolete courses
 # from the prerequisites.
-def parse_prerequisites_UdeM(course_page_name):
-    course_page = open(course_page_name)
+def parse_prerequisites_UdeM(file_path):
+    course_page = open(file_path)
     soup = BeautifulSoup(course_page, 'html.parser')
     raw_prereqs = soup.find_all('p', class_='specDefinition')
     #print(raw_prereqs)
@@ -84,5 +84,23 @@ def parse_prerequisites_UdeM(course_page_name):
     return 0            
 
 pre_reqs = parse_prerequisites_UdeM('test/ift-3395.html')
-print(pre_reqs)
-    
+#print(pre_reqs)
+
+#extract relevant information from the schema provided within the html of
+#the course webpage.
+def extract_course_schema(file_path):
+    course_page = BeautifulSoup(open(file_path), 'html.parser')
+    schema = course_page.find('script', attrs={'type' :'application/ld+json'}).string
+    #we no have access to the json schema that was provided in the course
+    #webpage
+    schema_json = json.loads(schema)
+    #we're going to transfer only the info we need into a new json object that
+    #we will return
+    useful_schema = {}
+    useful_schema["name"] = schema_json["name"]
+    useful_schema["description"] = schema_json["description"]
+
+    return useful_schema
+
+
+schema = extract_course_schema('test/ift-2935.html')
