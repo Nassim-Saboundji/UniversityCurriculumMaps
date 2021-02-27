@@ -37,7 +37,7 @@ run `python3 main.py nameofdiscipline linkofthecurriculum`
 
 `nameofdiscipline` must be all lower case with no space.
 
-Exemple for physics it would be : https://admission.umontreal.ca/programmes/baccalaureat-en-physique/structure-du-programme/
+Ex: for physics it would be : https://admission.umontreal.ca/programmes/baccalaureat-en-physique/structure-du-programme/
 
 Wait until the program finishes. It produced a `nameofdiscipline.json`
 file.
