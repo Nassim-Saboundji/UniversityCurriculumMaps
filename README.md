@@ -10,3 +10,10 @@ The program was made with extension in mind so it could be used as base for more
 - Every code specific in extracting content from University of Montréal (UdeM) is located inside of the extractor_UdeM.py file.
 
 - curriculum.py contains a Curriculum class which hold the information extracted.
+
+
+Visualizations are made in the visjs library :
+
+- [Bsc Computer Science (Informatique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScInformatique/)
+
+-[Bsc Mathematics (Mathématique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
