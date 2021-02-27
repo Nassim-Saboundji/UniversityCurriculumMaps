@@ -27,6 +27,7 @@ Visualizations are made in the visjs library :
 -[Bsc Mathematics (Mathématique) visualization](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
   ![screenshot of the BSc Mathematics](BsMathScreenshot.png)
 
+![screenshot of bubble drag](animation.gif)
 
 ## How to run?  
 Running the data extractor:
