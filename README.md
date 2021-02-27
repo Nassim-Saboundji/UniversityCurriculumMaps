@@ -50,7 +50,7 @@ math = Curriculum('math','https://admission.umontreal.ca/programmes/baccalaureat
 
 ```
 
-Replace math with the discipline you want to extract the curriculum from. Ex: Replace `math` with `physics`. At this point it's just an arbitrary name. It' required because we extract the data and put them in folders and files that uses that name.
+Replace math with the discipline you want to extract the curriculum from. Ex: Replace `math` with `physics`. At this point it's just an arbitrary name. It's required because we extract the data and put them in folders and files that uses that name.
 
 Inside the Curriculum object replace the current link with a link from
 admission.umontreal.ca (It's the link you get when you click on the tab structure du programme of a given curriculum)
