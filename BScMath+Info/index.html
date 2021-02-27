@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Baccalauréat en Mathématiques et Informatique</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <style type="text/css">
+      #mynetwork {
+        /* position: absolute; */
+        /* width: 50em; */
+        height: 30em;
+        border: 1px solid rgb(194, 27, 27);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="section">
+      <div class="container is-fluid ">
+        <h1 class="title">Curriculum Map du Baccalauréat en Mathématiques et Informatique de l'UdeM</h1>
+      </div>
+
+      <div class="container is-fluid">
+        <p>Par Nassim Saboundji</p> <a href="https://github.com/Nassim-Saboundji/UniversityCurriculumMaps" target="_blank">Code source</a>
+      </div>
+
+      <div class="container is-fluid mt-3">
+        <div id="mynetwork"></div>
+      </div>
+    </div>
+    <script src="makeCurriculumMap.js"></script>
+    
+  </body>
+</html>
