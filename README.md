@@ -34,6 +34,7 @@ Running the data extractor:
  - install bs4 (BeautifulSoup) module by doing `pip3 install beautifulsoup4`
 
 run `python3 main.py nameofdiscipline linkofthecurriculum`
+
 `nameofdiscipline` must be all lower case with no space.
 
 Exemple for physics it would be : https://admission.umontreal.ca/programmes/baccalaureat-en-physique/structure-du-programme/
