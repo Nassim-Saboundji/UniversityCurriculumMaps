@@ -60,7 +60,7 @@ For physics it would be : https://admission.umontreal.ca/programmes/baccalaureat
 Run by doing `python3 main.py`.
 Wait until the program finishes.
 
-Once this is done. Create a new folder. copy the index.html and makeCurriculumMap.js from ex: BScMath and put them in that folder.
+Once this is done. Create a new folder. copy the index.html and makeCurriculumMap.js from ex: BScMath's folder and put them in the new one you just created.
 
 Now replace `fetch("./math.json")` from makeCurriculumMap.js with 
 `fetch("./nameYouChose.json")`
