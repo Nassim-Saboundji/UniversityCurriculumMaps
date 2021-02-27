@@ -24,10 +24,10 @@ Visualizations are made in the visjs library :
 
   ![screenshot of the BSc Computer Science](BsInformatiqueScreenshot.png)
 
--[Bsc Mathematics (Mathématique) visualization](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
+-[Bsc Mathematics (Mathématiques) visualization](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
   ![screenshot of the BSc Mathematics](BsMathScreenshot.png)
 
--[Bsc Mathematics (Mathématique) and Computer Science (Informatique) visualization](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath+Info/)
+-[Bsc Mathematics (Mathématiques) and Computer Science (Informatique) visualization](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath+Info/)
 
 ![screenshot of bubble drag](animation.gif)
 
