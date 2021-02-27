@@ -14,6 +14,6 @@ The program was made with extension in mind so it could be used as base for more
 
 Visualizations are made in the visjs library :
 
-- [Bsc Computer Science (Informatique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScInformatique/)
+-[Bsc Computer Science (Informatique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScInformatique/)
 
 -[Bsc Mathematics (Mathématique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
