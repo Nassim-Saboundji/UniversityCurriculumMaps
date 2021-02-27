@@ -16,4 +16,6 @@ Visualizations are made in the visjs library :
 
 -[Bsc Computer Science (Informatique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScInformatique/)
 
+  ![screenshot of the BSc Computer Science](BsInformatiqueScreenshot.png)
+
 -[Bsc Mathematics (Mathématique)](https://nassim-saboundji.github.io/UniversityCurriculumMaps/BScMath/)
