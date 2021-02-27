@@ -1,4 +1,7 @@
-# Curriculum Map Data Extractor
+# University Curriculum Maps
+Visualizations to help students select their courses.
+(Currently supports only University of Montréal)
+## Curriculum Map Data Extractor
  
  A Python script for extracting courses and their prerequisites from a curriculum at https://umontreal.ca ex: BSc in Computer Science, BSc in economic science and so on. The data is extracted locally and then transformed to output a .json file with select information (ex: prerequisite courses) that can be used to map out a network of all courses. 
 
