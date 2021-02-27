@@ -1,38 +1,23 @@
 from extractor_UdeM import *
 from curriculum import *
 import glob
+import sys
 
 def main():
    
-   #example of usage 
-
-#    informatique = Curriculum('informatique','https://admission.umontreal.ca/programmes/baccalaureat-en-informatique/structure-du-programme/')
-#    informatique.download_html() #you should only run this once or when you want up to date data
-#    soup = informatique.soupify()
-#    dl_course_pages_UdeM(soup,'informatique') #also this 
-
-#    #find all the files in the specified directory
-#    file_list = glob.glob("informatique/*.html")
-
-#    for file in file_list:
-#        schema = course_schema_array(file)
-#        informatique.add_course(schema)
-   
-#    informatique.write_to_JSON('informatique')
-
-   math = Curriculum('math','https://admission.umontreal.ca/programmes/baccalaureat-en-mathematiques/structure-du-programme/')
-   math.download_html() #you should only run this once or when you want up to date data
-   soup = math.soupify()
-   dl_course_pages_UdeM(soup,'math') #also this 
+   discipline = Curriculum(sys.argv[0], sys.argv[1])
+   discipline.download_html() #you should only run this once or when you want up to date data
+   soup = discipline.soupify()
+   dl_course_pages_UdeM(soup, sys.argv[0]) #also this 
 
    #find all the files in the specified directory
-   file_list = glob.glob("math/*.html")
+   file_list = glob.glob(sys.argv[0] + "/*.html")
 
    for file in file_list:
        schema = course_schema_array(file)
-       math.add_course(schema)
+       discipline.add_course(schema)
    
-   math.write_to_JSON('math')
+   discipline.write_to_JSON(sys.argv[0])
 
 
 if __name__ == '__main__':

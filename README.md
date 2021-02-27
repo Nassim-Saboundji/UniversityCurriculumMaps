@@ -32,39 +32,19 @@ Visualizations are made in the visjs library :
 ## How to run?  
 Running the data extractor:
  - install bs4 (BeautifulSoup) module by doing `pip3 install beautifulsoup4`
- - go to main.py and add 
-```
-math = Curriculum('math','https://admission.umontreal.ca/programmes/baccalaureat-en-mathematiques/structure-du-programme/')
-   math.download_html() #you should only run this once or when you want up to date data
-   soup = math.soupify()
-   dl_course_pages_UdeM(soup,'math') #also this 
 
-   #find all the files in the specified directory
-   file_list = glob.glob("math/*.html")
+run `python3 main.py nameofdiscipline linkofthecurriculum`
+`nameofdiscipline` must be all lower case with no space.
 
-   for file in file_list:
-       schema = course_schema_array(file)
-       math.add_course(schema)
-   
-   math.write_to_JSON('math')
+Exemple for physics it would be : https://admission.umontreal.ca/programmes/baccalaureat-en-physique/structure-du-programme/
 
+Wait until the program finishes. It produced a `nameofdiscipline.json`
+file.
 
-```
-
-Replace math with the discipline you want to extract the curriculum from. Ex: Replace `math` with `physics`. At this point it's just an arbitrary name. It's required because we extract the data and put them in folders and files that uses that name.
-
-Inside the Curriculum object replace the current link with a link from
-admission.umontreal.ca (It's the link you get when you click on the tab structure du programme of a given curriculum)
-
-For physics it would be : https://admission.umontreal.ca/programmes/baccalaureat-en-physique/structure-du-programme/
-
-Run by doing `python3 main.py`.
-Wait until the program finishes.
-
-Once this is done. Create a new folder. copy the index.html and makeCurriculumMap.js from ex: BScMath's folder and put them in the new one you just created.
+Create a new folder. copy the index.html and makeCurriculumMap.js from ex: BScMath's folder and put them in the new one you just created.
 
 Now replace `fetch("./math.json")` from makeCurriculumMap.js with 
-`fetch("./nameYouChose.json")`
+`fetch("./nameofdiscipline.json")`
 
 Now simply open the index.html file and you should see the map being 
 generated.
